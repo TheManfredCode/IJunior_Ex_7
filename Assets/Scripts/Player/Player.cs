@@ -17,16 +17,22 @@ public class Player : MonoBehaviour
     private void Start()
     {
         _currentHealth = _maxHealth;
+
+        HealthChanged?.Invoke(_currentHealth);
+        MoneyChanged?.Invoke(_money);
     }
 
     public void CollectCoin()
     {
         _money++;
+        MoneyChanged?.Invoke(_money);
     }
 
     public void TakeDamage(int damage)
     {
         _currentHealth -= damage;
+        HealthChanged?.Invoke(_currentHealth);
+
         if (_currentHealth <= 0)
             Died?.Invoke();
     }
