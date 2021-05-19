@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
-[RequireComponent(typeof(Animator))]
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] private float _speed;
@@ -12,7 +11,6 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float _gravityModifier = 1f;
     [SerializeField] private LayerMask _layerMask;
 
-    private Animator _animator;
     private Vector2 _velocity;
     private Vector2 _targetVelocity;
     private bool _grounded;
@@ -25,10 +23,11 @@ public class PlayerMovement : MonoBehaviour
     private const float minMoveDistance = 0.001f;
     private const float shellRadius = 0.01f;
 
+    public Vector2 TargetVelocity => _targetVelocity;
+
     void OnEnable()
     {
         _rb2d = GetComponent<Rigidbody2D>();
-        _animator = GetComponent<Animator>();
     }
 
     void Start()
@@ -41,7 +40,6 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         _targetVelocity = new Vector2(Input.GetAxis("Horizontal"), 0);
-        _animator.SetFloat("Direction", _targetVelocity.x);
 
         if (Input.GetKey(KeyCode.Space) && _grounded)
             _velocity.y = 5;

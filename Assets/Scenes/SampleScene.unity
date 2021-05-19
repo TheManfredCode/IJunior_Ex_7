@@ -1005,7 +1005,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _target: {fileID: 903020663}
   _speed: 1
-  _yOffset: 1
+  _offsetY: 0
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0
@@ -1330,6 +1330,7 @@ GameObject:
   - component: {fileID: 903020659}
   - component: {fileID: 903020664}
   - component: {fileID: 903020658}
+  - component: {fileID: 903020665}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -1500,6 +1501,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _maxHealth: 3
+--- !u!114 &903020665
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 903020657}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab4a2f8fee036fc4d82a96340dace935, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &961888857
 GameObject:
   m_ObjectHideFlags: 0
